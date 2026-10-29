@@ -1,0 +1,26 @@
+name: Java CI/CD pipeline
+  on:
+   push:
+    branches:['Main']
+  pull_request:
+    branches:['Main']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on:Windows-latest
+
+    steps:
+     -name:Checkout Repository
+       uses:actions/checkout@v4
+
+      -name:Set up JDK 21
+        uses:actions/Setup java@v5
+        with:
+          java-version:'21'
+          distribution:'temurin'
+
+      -name:Compile the Java program
+        run:javac hello.java
+      -name:Run the Java program
+        run:java hello
