@@ -14,11 +14,11 @@ jobs:
      -name:Checkout Repository
        uses:actions/checkout@v4
 
-      -name:Set up JDK 21
-        uses:actions/Setup java@v5
-        with:
-          java-version:'21'
-          distribution:'temurin'
+     -name:Set up JDK 21
+      uses:actions/Setup java@v5
+      with:
+        java-version:'21'
+        distribution:'temurin'
 
       -name:Compile the Java program
         run:javac hello.java
